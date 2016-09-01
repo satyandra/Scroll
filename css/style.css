@@ -1,0 +1,207 @@
+#app bmo-header {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    height: 60px;
+    
+}
+#app  bmo-header  div.logo {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;f
+    height: 60px;
+    display: block;
+    text-indent: -9999px;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-position: 10px 4px;
+    background-size: 110px 60px;
+}
+#app .page .page-content h2 {
+    margin-bottom: 20px;
+}
+#app h2, #app h3, #app h4 {
+    font-weight: 400;
+    text-align: center;
+}
+#app h2, #app h3 {
+    line-height: 3rem;
+    font-family: Dax-Light;
+    color: #333;
+}
+#app h2 {
+    font-size: 2.0rem;
+}
+
+#app #intro #pre-qualifier .question-box {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 260px;
+    border-bottom: 1px solid #9b9b9b;
+    margin: 0 auto;
+    min-height: 300px;
+    position: relative;
+}
+
+#app #intro #pre-qualifier .question-box .question-number {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#app #intro #pre-qualifier .question-box .question-number {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    font-family: Lato-Regular;
+    color: #4a4a4a;
+}
+
+#app #intro #pre-qualifier .question-box .select-circle {
+    border: 1px solid #0079c1;
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: auto 12px;
+}
+
+#app #intro #pre-qualifier .question-box .answer-box, #app #intro #pre-qualifier .question-box .select-circle {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    opacity: .7;
+    background: #fff;
+} 
+.active {
+    background: #0079c1;
+}
+section #bottom{
+	padding: 280px 0 30px 0;
+}
+footer {
+	text-align: center;
+}
+
+button {
+	font-size: 18px;
+	border: 0;
+	padding: 15px 30px;
+	background: #00AC7F;
+	color: #fff;
+	cursor: pointer;
+}
+#app #intro #pre-qualifier .question-box .answer-box, #app #intro #pre-qualifier .question-box .select-circle {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+#app .visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+#app #intro #pre-qualifier .question-box .question-text {
+    text-align: center;
+    margin: 10px 0;
+}
+#app #intro #get-started .plan, #app #intro #get-started .secondary-accounts .ampersand, #app #intro #get-started .secondary-accounts .secondary, #app #intro #get-started bmo-info-bubble ul li, #app #intro #pre-qualifier .question-box .question-text {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-family: Lato-Regular;
+    color: #333;
+    
+}
+#app bmo-tooltip .container {
+    background: #0079c1;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    border-radius: 4px;
+   
+}
+
+	#app bmo-tooltip .container button {
+    display: block;
+    margin: 20px auto 10px;
+    width: 200px;
+    height: 48px;
+    text-align: center;
+    border-radius: 50px;
+    background-color: #fff;
+}
+#app bmo-tooltip .container button {
+    font-family: Dax-Medium;
+    font-size: 1rem;
+    color: #0079c1;
+    text-align: center;
+}
+.question-box .question-text {
+    font-size: 1.0rem;
+    line-height: 2rem;
+    font-family: Lato-Regular;
+    color: #333;
+}
+
+
+#app bmo-tooltip.left .container .arrow {
+    left: 65px;
+    right: auto;
+    margin: 0;
+}
+#app bmo-tooltip .container .arrow {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #0079c1;
+    position: absolute;
+    top: -10px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+#app bmo-tooltip .container h3 {
+    color: #fff;
+}
+
+#app h2, #app h3, #app h4 {
+    font-weight: 400;
+    text-align: center;
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html ng-app="myApp" id="app">
+<head>
+<meta charset="UTF-8" />
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
+    
+<link rel="stylesheet" href="css/style.css" />
+<script src="script/script.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+
+
+
+</style>
+</head>
+<body>
+<bmo-header role="banner" class="ng-isolate-scope">
+            <div class="logo"></div>
+            
+            
+        </bmo-header>
+	<div class="wrap" ng-controller="MyCtrl">
+		
+		
+
+
+		<div ui-view="pages" class="ng-scope">
+			<div id="intro" ng-class="" class="ng-scope">
+				<section id="pre-qualifier" ng-show="!showTerms" class="page"
+					aria-hidden="false">
+					<div class="page-content">
+						
+						<!-- ngIf: lang == 'FR' -->
+						<h2 tabindex="0" class="ng-binding">Just a few things before
+							we get started</h2>
+						<div id="new-to-bmo" class="question-box">
+							<div class="question-number ng-binding">1 of 3</div>
+							<div class="question-text ng-binding">Already a customer
+								with a BMO Debit Card?</div>
+							<div class="answer-box">
+								<label> <input ng-value="isNewToBMO"
+									type="radio" name="isNewToBMO"
+									ng-click="onClickNewToBMO(false)" class="visually-hidden"
+									aria-describedby="tip"> <span
+									class="visually-hidden ng-binding">Yes</span>
+									<div class="select-circle" ng-click="onClickNewToBMO(false)"
+										ng-class="{active: isNewToBMO == false}"
+										aria-hidden="true" role="button" tabindex="0">
+										<div class="circle-text ng-binding">Yes</div>
+									</div>
+								</label> <label> <input ng-value="isNewToBMO"
+									type="radio" name="isNewToBMO" ng-click="onClickNewToBMO(true)"
+									class="visually-hidden"> <span
+									class="visually-hidden ng-binding">No</span>
+									<div class="select-circle" ng-click="onClickNewToBMO(true)"
+										ng-class="{active: isNewToBMO == true}"
+										aria-hidden="true" role="button" tabindex="0">
+										<div class="circle-text ng-binding">No</div>
+									</div>
+								</label>
+							</div>
+							<bmo-tooltip class="left ng-scope ng-isolate-scope" ng-if="isNewToBMO === false" title="It looks like we know you already!" message="You can easily add a new account to your existing profile." prompt="Add an account" on-click-prompt="onClickExistingCustomer($event)" role="tooltip" id="tip">
+            <div class="container">
+                <div class="arrow"></div>
+                <h3 class="ng-binding">It looks like we know you already!</h3>
+                <div class="message ng-binding">You can easily add a new account to your existing profile.</div>
+                <!-- ngIf: prompt && onClickPrompt --><button type="button" class="prompt ng-binding ng-scope" >Add an account</button><!-- end ngIf: prompt && onClickPrompt -->
+            </div>
+        </bmo-tooltip>
+							<!-- ngIf: formData.isNewToBMO === false -->
+							
+						</div>
+						<section>
+						
+						
+						<div id="cdnresident" class="question-box" ng-disabled="cdnresident" aria-hidden="true">
+							<div class="question-number ng-binding">2 of 3</div>
+							<div class="question-text ng-binding">Do you have a
+								Canadian address?</div>
+							<div class="answer-box">
+								<label> <input ng-value="formData.isCdnResident"
+									type="radio" name="isCdnResident"
+									ng-click="onClickResident(true)" class="visually-hidden">
+									<span class="visually-hidden ng-binding">Yes</span>
+									<div class="select-circle" ng-click="onClickResident(true)"
+										ng-class="{active: isCdnResident === true}"
+										aria-hidden="true" role="button" tabindex="0">
+										<div class="circle-text ng-binding">Yes</div>
+									</div>
+								</label> <label> <input ng-value="isCdnResident"
+									type="radio" name="isCdnResident"
+									ng-click="onClickResident(false)" class="visually-hidden"
+									aria-describedby="tip"> <span
+									class="visually-hidden ng-binding">No</span>
+									<div class="select-circle" ng-click="onClickResident(false)"
+										ng-class="{active: isCdnResident === false}"
+										aria-hidden="true" role="button" tabindex="0">
+										<div class="circle-text ng-binding">No</div>
+									</div>
+								</label>
+							</div>
+							<!-- ngIf: formData.isCdnResident === false -->
+							<div class="fade" ng-hide="cdnresident"
+								aria-hidden="false"></div>
+						</div>	
+						
+						</section>
+						<section>
+						<div id="joint" class="question-box" aria-hidden="true">
+							<div class="question-number ng-binding">3 of 3</div>
+							<div class="question-text ng-binding">Do you need a single
+								or joint account?</div>
+							<div class="answer-box">
+								<label> <input ng-value="isSingle" type="radio"
+									name="isSingle" ng-click="onClickSingle(true)"
+									class="visually-hidden"> <span
+									class="visually-hidden ng-binding">Single</span>
+									<div class="select-circle" ng-click="onClickSingle(true)"
+										ng-class="{active: isSingle === true}"
+										aria-hidden="true" role="button" tabindex="0">
+										<div class="circle-text ng-binding">Single</div>
+									</div>
+								</label> <label> <input ng-value="isSingle"
+									id="isSingleNo" type="radio" name="isSingle"
+									ng-click="onClickSingle(false)" class="visually-hidden"
+									aria-describedby="tip"> <span
+									class="visually-hidden ng-binding">Joint</span>
+									<div class="select-circle" ng-click="onClickSingle(false)"
+										ng-class="{active: isSingle === false}"
+										aria-hidden="true" role="button" tabindex="0">
+										<div class="circle-text ng-binding">Joint</div>
+									</div>
+								</label>
+							</div>
+							<!-- ngIf: formData.isSingle === false -->
+							<div class="fade" ng-hide="joint" aria-hidden="false"></div> 
+							
+						</div>
+						</section>
+						<section id="bottom"></section>
+						<div class="spacer"></div>
+					</div>
+				</section>
+				<!-- <section id="get-started" ng-show="showTerms" aria-hidden="true"
+					class="ng-hide">
+					<div class="page">
+						<div class="large-hero"></div>
+						<div class="page-content">
+							<h3 class="ng-binding">Let's open your Chequing Account</h3>
+							ngIf: planName && (hasCheq)
+							<div class="plan ng-binding ng-scope"
+								ng-if="planName &amp;&amp; (hasCheq)">with Performance
+								Plan</div>
+							end ngIf: planName && (hasCheq)
+							ngIf: hasSecondary
+							<div class="secondary-accounts ng-scope" ng-if="hasSecondary">
+								<div class="ampersand">+</div>
+								<div class="secondary">
+									ngRepeat: account in secondaryAccounts
+									<div ng-repeat="account in secondaryAccounts"
+										class="ng-binding ng-scope">Premium Rate Savings Account
+									</div>
+									end ngRepeat: account in secondaryAccounts
+								</div>
+							</div>
+							end ngIf: hasSecondary
+							ngIf: hasDiscount
+							<form name="formIntro" novalidate="" ng-submit="onSubmit()"
+								class="ng-pristine ng-valid">
+								<button type="submit" class="primary ng-binding"
+									data-bmo-pressed-state="">Get started</button>
+							</form>
+							<bmo-info-bubble>
+							<div class="arrow"></div>
+							<div class="bubble">
+								<ng-transclude>
+								<h4 class="ng-binding ng-scope">You'll need</h4>
+								<ul class="ng-scope">
+									<li class="ng-binding">Social Insurance Number</li>
+									<li class="ng-binding">A few minutes of your time</li>
+								</ul>
+								</ng-transclude>
+							</div>
+							</bmo-info-bubble>
+						</div>
+					</div>
+				</section> -->
+			</div>
+		</div>
+
+			
+
+
+		<footer> </footer>
+	</div>
+
+
+
+	<script>
+angular.module('myApp', ['duScroll']).
+  controller('MyCtrl', function($scope, $document){
+	 $scope.isNewToBMO=0
+	 $scope.isNewToBMO={shake:false};
+	 $scope.isCdnResident=0
+	 $scope.isCdnResident={shake:false};
+	 
+	 
+   var section2 = angular.element(document.getElementById('cdnresident'));
+    $scope.onClickNewToBMO = function(value) {
+    	 
+      if(value){
+    	  
+      $document.scrollToElementAnimated(section2);
+      
+      $scope.isNewToBMO=value;
+      $scope.cdnresident=true;
+      angular.element(document.querySelector(section2)).show();
+      
+     
+    }else{
+    	 $scope.isNewToBMO=value;
+    	 $scope.cdnresident=false;
+    	 $scope.joint=false;
+    }
+   }
+    var section3 = angular.element(document.getElementById('joint'));
+    $scope.onClickResident = function(value) {
+    	
+      if(value){
+    	  $scope.isCdnResident=value;
+    	  $scope.joint=true;
+      $document.scrollToElementAnimated(section3);
+    }else{
+    	 $scope.isCdnResident=value;
+    	 $scope.joint=false;
+    }
+   }
+
+  }
+).value('duScrollOffset', 30);
+</script>
+</body>
+</html>
